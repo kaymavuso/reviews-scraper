@@ -1,14 +1,23 @@
-<header>
-    <div>
-        <nav>
-            <ul>
-                <li>
-                    <a href="{% url 'jobs' %}">Dashboard</a>
-                </li>
-                <li>
-                    <a href="#">Single Job</a>
-                </li>
-            </ul>
-        </nav>
+{% load static %}
+
+<header class="header">
+    <div class="container container--narrow">
+
+      <a href="{% url 'jobs' %}" class="header__logo">
+        <img src="{% static 'images/logo.png' %}" alt="Reviews Scraper Logo" />
+      </a>
+
+      <nav class="header__nav">
+        <ul class="header__menu">
+          <li class="header__menuItem"><a href="{% url 'jobs' %}">Dashboard</a></li>
+          {% if request.user.is_authenticated %}
+          <li class="header__menuItem"><a href="{% url 'create-scrape-job' %}" class="btn btn--sub">Add Scrape Job</a></li>
+          <li class="header__menuItem"><a href="{% url 'account' %}" class="btn btn--sub">My Account</a></li>
+          <li class="header__menuItem"><a href="{% url 'logout' %}" class="btn btn--sub">Logout</a></li>
+          {% else %}
+          <li class="header__menuItem"><a href="{% url 'login' %}" class="btn btn--sub">Login/Sign Up</a></li>
+          {% endif %}
+        </ul>
+      </nav>
     </div>
 </header>

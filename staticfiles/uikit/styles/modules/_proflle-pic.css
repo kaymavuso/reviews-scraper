@@ -1,0 +1,26 @@
+.profile-pic--lg {
+    border-radius: 50%;
+    border: 2px solid var(--color-main);
+    object-fit: cover;
+  }
+  
+  .profile-pic--lg--xl {
+    height: 20rem;
+    width: 20rem;
+  }
+  
+  .profile-pic--lg--lg {
+    height: 15rem;
+    width: 15rem;
+  }
+  
+  .profile-pic--lg--md {
+    height: 7rem;
+    width: 7rem;
+  }
+  
+  .profile-pic--lg--sm {
+    height: 5rem;
+    width: 5rem;
+  }
+  

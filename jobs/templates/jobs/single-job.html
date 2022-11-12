@@ -3,6 +3,14 @@
 
 {% block content %}
 
-<h1>Single jobs template</h1>
+<img style="max-width: 500px;" src="{{ single_job.product_image.url }}" alt="">
+
+<h1>{{ single_job.name }}</h1>
+
+<p>Selected store: {{ single_job.selected_store }}</p>
+<p>Selected brand: {{ single_job.selected_brand }}</p>
+<p>Selected product: {{ single_job.selected_product }}</p>
+<p>Date created: {{ single_job.created_date }}</p>
+<p>Owner: {{ single_job.user_id }}</p>
 
 {% endblock content %}

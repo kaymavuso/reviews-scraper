@@ -3,12 +3,22 @@
 
 {% block content %}
 
-<h1>Jobs template</h1>
-<p>
-    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt 
-    ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco 
-    laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in 
-    voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-</p>
+<h1>Scrape Jobs</h1>
+<ol>
+    {% for job in jobs %}
+    <li>
+        {{ job.name }}
+        <a href="{% url 'job' job.id %}">
+            View
+        </a>
+        <a href="{% url 'update-scrape-job' job.id %}">
+            Edit
+        </a>
+        <a href="{% url 'delete-scrape-job' job.id %}">
+            Delete
+        </a>
+    </li>
+    {% endfor %}
+</ol>
 
 {% endblock content %}
