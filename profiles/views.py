@@ -8,16 +8,9 @@ from django.contrib.auth.models import User
 from .models import Profile
 from .forms import CustomUserCreationForm
 
+import os
+
 # Create your views here.
-
-def profiles(request):
-    return render(request, 'profiles/profiles.html')
-
-def userProfile(request, primary_key):
-    profile = Profile.objects.get(id=primary_key)
-
-    context = {'profile': profile }
-    return render(request, 'profiles/user-profile.html', context)
 
 def loginUser(request):
     page = 'login'
@@ -84,7 +77,7 @@ def registerUser(request):
     context = {'page': page, 'form': form}
     return render(request, 'profiles/login_and_register.html', context)
 
-@login_required(login_url='login')
+# @login_required(login_url='login')
 def userAccount(request):
     # getting the logged in user
     profile = request.user.profile

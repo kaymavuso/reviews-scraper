@@ -1,7 +1,7 @@
 """reviews-scraper URL Configuration
 
 The `urlpatterns` list routes URLs to views. For more information please see:
-    https://docs.djangoproject.com/en/3.2/topics/http/urls/
+    https://docs.djangojob.com/en/3.2/topics/http/urls/
 Examples:
 Function views
     1. Add an import:  from my_app import views
@@ -22,10 +22,9 @@ from django.conf.urls.static import static
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('jobs/', include('jobs.urls')), # creating a connection with the jobs app to include all the urls from the jobs app directory
-    path('', include('profiles.urls'))
+    path('', include('jobs.urls')), # creating a connection with the jobs app to include all the urls from the jobs app directory
+    path('profiles/', include('profiles.urls'))
 ]
 
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
-# VIDEO 12

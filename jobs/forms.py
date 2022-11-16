@@ -2,7 +2,7 @@ from django.forms import ModelForm
 from django import forms
 from .models import Job
 
-# Django will look into the Project model and create a form
+# Django will look into the job model and create a form
 # based on the forms attributes
 class JobForm(ModelForm):
     # Model Meta is basically the inner class of your model class.
@@ -12,4 +12,16 @@ class JobForm(ModelForm):
     class Meta:
         model = Job
         # fields = '__all__'
-        fields = ['name', 'selected_store', 'selected_brand', 'selected_product']
+        fields = ['name', 'store', 'brand', 'product']
+
+    def __init__(self, *args, **kwargs):
+        super(JobForm, self).__init__(*args, **kwargs)
+
+        # self.fields['name'].widget.attrs.update(
+        #     {'class': 'input'})
+
+        # self.fields['store'].widget.attrs.update(
+        #     {'class': 'input'})
+
+        for name, field in self.fields.items():
+            field.widget.attrs.update({'class': 'input'})

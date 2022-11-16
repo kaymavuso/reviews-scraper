@@ -32,7 +32,7 @@ img {
   position: sticky;
   z-index: 111;
   background-color: var(--color-sub);
-  padding: 1.5rem;
+  padding: 1.5rem 0;
 }
 
 .header > .container {
@@ -44,7 +44,6 @@ img {
 .header__logo > img {
   height: 10rem;
   border-radius: 15px;
-
 }
 
 .header__nav > ul {
@@ -72,7 +71,7 @@ img {
   pointer-events: all;
 }
 
-.project--thumbnail {
+.job--thumbnail {
   height: 250px;
   object-fit: cover;
 }
@@ -408,45 +407,45 @@ img {
 }
 
 /*=======================
-  Single Projects
+  Single jobs
 ========================*/
 
-.singleProject .column--1of3 {
+.singleJob .column--1of3 {
   order: 2;
 }
 
 @media screen and (min-width: 1081px) {
-  .singleProject .column--1of3 {
+  .singleJob .column--1of3 {
     order: 1;
   }
-  .singleProject .column--2of3 {
+  .singleJob .column--2of3 {
     order: 2;
   }
 }
 
-.singleProject__toolStack {
+.singleJob__toolStack {
   margin-top: 2rem;
   margin-bottom: 4rem;
 }
 
-.singleProject__liveLink {
+.singleJob__liveLink {
   font-weight: 500;
   transition: all 0.3s ease-in-out;
   border-bottom: 2px solid transparent;
 }
 
-.singleProject__liveLink:hover {
+.singleJob__liveLink:hover {
   font-weight: 500;
   border-bottom: 2px solid var(--color-main);
 }
 
-.singleProject__liveLink i {
+.singleJob__liveLink i {
   display: inline-block;
   font-size: 1.6rem;
   margin-right: 1rem;
 }
 
-.singleProject__preview {
+.singleJob__preview {
   height: 50vh;
   object-fit: cover;
   object-position: top center;
@@ -454,29 +453,29 @@ img {
   border-radius: 0.7rem;
 }
 
-.singleProject__developer {
+.singleJob__developer {
   font-size: 1.8rem;
   font-weight: 500;
 }
 
-.singleProject__title {
+.singleJob__title {
   font-size: 3.6rem;
   font-weight: 700;
   color: var(--color-sub);
   margin-bottom: 3rem;
 }
 
-.project__author{
+.job__author{
   font-size: 1.4rem;
   font-style: italic;
 }
 
-.project--rating{
+.job--rating{
   margin-bottom: 1.6em;
   margin-top: .5em;
 }
 
-.singleProject__subtitle {
+.singleJob__subtitle {
   text-transform: uppercase;
   font-size: 2.4rem;
   font-weight: 700;
@@ -485,45 +484,45 @@ img {
 }
 
 /*=======================
-  Projects Page
+  jobs Page
 ========================*/
-.projects > .hero-section {
+.jobs > .hero-section {
   background: var(--color-sub-lighter);
   height: 30vh;
 }
 
-.projects .hero-section__box {
+.jobs .hero-section__box {
   margin-bottom: 2.5rem;
 }
 
-.projects .hero-section__box > h2 {
+.jobs .hero-section__box > h2 {
   color: var(--color-sub);
 }
 
-.projects .hero-section__box > h2 > span {
+.jobs .hero-section__box > h2 > span {
   font-weight: 700;
   color: var(--color-sub);
 }
 
-.projectsList {
+.jobsList {
   margin-top: 8rem;
 }
 
-/*========== Projects ==========*/
+/*========== jobs ==========*/
 
-.project__thumbnail {
+.job__thumbnail {
   height: 25rem;
   object-fit: cover;
   object-position: top center;
 }
 
-.project__title {
+.job__title {
   font-size: 2rem;
   font-weight: 700;
   color: var(--color-sub);
 }
 
-.project__info {
+.job__info {
   margin: 1rem 0;
   font-size: 1.4rem;
   text-align: justify;
@@ -661,7 +660,7 @@ img {
   left: 0;
   bottom: 0;
   right: 0;
-  background: url(../images/pattern.jpg);
+  background: url(../images/pattern.png);
 }
 
 .auth > .card {

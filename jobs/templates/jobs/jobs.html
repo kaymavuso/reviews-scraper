@@ -3,7 +3,7 @@
 
 {% block content %}
 
-<h1>Scrape Jobs</h1>
+<!-- <h1>Scrape Jobs</h1>
 <ol>
     {% for job in jobs %}
     <li>
@@ -19,6 +19,64 @@
         </a>
     </li>
     {% endfor %}
-</ol>
+</ol> -->
+
+<!-- Main Section -->
+<main class="jobs">
+    <section class="hero-section text-center">
+      <div class="container container--narrow">
+        <div class="hero-section__box">
+          <h2>Search for <span>Scraped Jobs</span></h2>
+        </div>
+
+        <div class="hero-section__search">
+          <form class="form" action="#" method="get">
+            <div class="form__field">
+              <label for="formInput#search">Search By Scrape Job </label>
+              <input class="input input--text" id="formInput#search" type="text" name="text"
+                placeholder="Search by Scrape Job Name" />
+            </div>
+
+            <input class="btn btn--sub btn--lg" type="submit" value="Search" />
+          </form>
+        </div>
+      </div>
+    </section>
+    <!-- Search Result: DevList -->
+    <section class="jobsList">
+      <div class="container">
+        <div class="grid grid--three">
+
+          {% for job in jobs %}
+          <div class="column">
+            <div class="card job">
+              <a href="{% url 'job' job.id %}" class="job">
+                <img class="job__thumbnail" src="{{ job.product_image.url }}" alt="job thumbnail" />
+                <div class="card__body">
+                  <h3 class="job__title">{{ job.name }}</h3>
+                  <p><a class="job__author" href="{% url 'job' job.id %}">by {{ job.user_id }}</a></p>
+                  <p class="job--rating">
+                    <span style="font-weight: bold;">{{ job.store}}</span> {{ job.brand }}
+                  </p>
+                  <p>
+                    {{ job.product }}
+                  </p>
+
+                  <div class="job__tags">
+                    <span class="tag tag--pill tag--main">
+                      <small>{{ job.status }}</small>
+                    </span>
+                  </div>
+
+                </div>
+              </a>
+            </div>
+          </div>
+          {% endfor %}
+
+        </div>
+      </div>
+    </section>
+  </main>
 
 {% endblock content %}

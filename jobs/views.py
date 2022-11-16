@@ -24,10 +24,10 @@ def createScrapeJob(request):
         form = JobForm(request.POST, request.FILES)
         if form.is_valid():
             # we could have did form.save here but chose to no commit
-            # until we have forced the userprofile to be the project owner
-            project = form.save(commit=False)
-            project.owner = profile
-            project.save()
+            # until we have forced the userprofile to be the job owner
+            job = form.save(commit=False)
+            job.owner = profile
+            job.save()
                
             return redirect('jobs')
 

@@ -3,14 +3,59 @@
 
 {% block content %}
 
-<img style="max-width: 500px;" src="{{ single_job.product_image.url }}" alt="">
+<!-- Main Section -->
+<main class="singleJob my-md">
+    <div class="container">
+      <div class="layout">
 
-<h1>{{ single_job.name }}</h1>
+        <div class="column column--1of3">
+            <img class="singleJob__preview" src="{{ single_job.product_image.url }}" alt="portfolio thumbnail" />
+            <h2>{{ single_job.user_id }}</h2>
+            <h2 class="singleJob__title">{{ single_job.name }}</h2>
+            <h3 class="singleJob__subtitle">{{ single_job.store }}</h3>
+            <div class="singleJob__info">
+                {{ single_job.brand }}<br /><br />
+                {{ single_job.product }}
+            </div>
+        </div>
+        
+        <div class="column column--2of3">
+          <h3 class="singleJob__subtitle">Tools & Stacks</h3>
+          <div class="singleJob__toolStack">
+            <span class="tag tag--pill tag--sub tag--lg">
+              <small>Figma</small>
+            </span>
+            <span class="tag tag--pill tag--sub tag--lg">
+              <small>React Js</small>
+            </span>
+            <span class="tag tag--pill tag--sub tag--lg">
+              <small>REST API</small>
+            </span>
+            <span class="tag tag--pill tag--sub tag--lg">
+              <small>GraphQL</small>
+            </span>
+            <span class="tag tag--pill tag--sub tag--lg">
+              <small>TypeScript</small>
+            </span>
+            <span class="tag tag--pill tag--sub tag--lg">
+              <small>Webpack</small>
+            </span>
+            <span class="tag tag--pill tag--sub tag--lg">
+              <small>NextJS</small>
+            </span>
+            <span class="tag tag--pill tag--sub tag--lg">
+              <small>Postgres</small>
+            </span>
+            <span class="tag tag--pill tag--sub tag--lg">
+              <small>MongoDB</small>
+            </span>
+          </div>
 
-<p>Selected store: {{ single_job.selected_store }}</p>
-<p>Selected brand: {{ single_job.selected_brand }}</p>
-<p>Selected product: {{ single_job.selected_product }}</p>
-<p>Date created: {{ single_job.created_date }}</p>
-<p>Owner: {{ single_job.user_id }}</p>
+        </div>
+
+      </div>
+    </div>
+    </div>
+  </main>
 
 {% endblock content %}

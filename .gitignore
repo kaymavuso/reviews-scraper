@@ -110,12 +110,12 @@ ENV/
 env.bak/
 venv.bak/
 
-# Spyder project settings
-.spyderproject
-.spyproject
+# Spyder job settings
+.spyderjob
+.spyjob
 
-# Rope project settings
-.ropeproject
+# Rope job settings
+.ropejob
 
 # mkdocs documentation
 /site

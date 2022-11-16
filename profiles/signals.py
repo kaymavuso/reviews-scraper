@@ -11,6 +11,7 @@ from django.conf import settings
 # the decorator is like calling post_save.connect(createdProfile, sender=User), see below
 @receiver(post_save, sender=User)
 def createProfile(sender, instance, created, **kwargs):
+    # print('we get to register signal createProfile')
     if created:
         user = instance
         profile = Profile.objects.create(
@@ -20,16 +21,19 @@ def createProfile(sender, instance, created, **kwargs):
             name=user.first_name,
         )
 
-        subject = 'Welcome to Brand Reviews Scraper'
-        message = 'We are glad you are here!'
+        # Wasted 2 days because of this: //github.com/gitpod-io/gitpod/issues/965
+        # subject = 'Welcome to the Brand Reviews Scraper'
+        # message = 'We are glad you are here!'
+        # print('about to send mail')
 
-        send_mail(
-            subject,
-            message,
-            settings.EMAIL_HOST_USER, # this will somehow grab the users email
-            [profile.email],
-            fail_silently=False,
-        )
+        # send_mail(
+        #     subject,
+        #     message,
+        #     settings.EMAIL_HOST_USER, # this will somehow grab the users email
+        #     [profile.email],
+        #     fail_silently=False,
+        # )
+        # print('after sending mail')
 
 
 # the decorator is like calling post_save.connect(updateUser, sender=Profile), see below

@@ -1,10 +1,10 @@
 """
-ASGI config for reviews-scraper project.
+ASGI config for reviews-scraper job.
 
 It exposes the ASGI callable as a module-level variable named ``application``.
 
 For more information on this file, see
-https://docs.djangoproject.com/en/3.2/howto/deployment/asgi/
+https://docs.djangojob.com/en/3.2/howto/deployment/asgi/
 """
 
 import os
